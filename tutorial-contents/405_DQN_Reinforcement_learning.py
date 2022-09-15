@@ -76,6 +76,7 @@ class DQN(object):
         # target parameter update
         if self.learn_step_counter % TARGET_REPLACE_ITER == 0:
             self.target_net.load_state_dict(self.eval_net.state_dict())
+            print("Replace Learning: ", self.learn_step_counter)
         self.learn_step_counter += 1
 
         # sample batch transitions
